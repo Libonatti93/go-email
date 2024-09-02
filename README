@@ -1,0 +1,26 @@
+Email Verification Tool in Golang
+Install Dependencies:
+
+To verify MX records, we will use the standard net package.
+
+Code Explanation
+Syntax Check: Uses a regular expression (regexp) to check if the email follows the standard format (e.g. user@domain.com).
+
+MX Domain Check: Uses net.LookupMX to check the domain's MX records, which indicate whether the domain is configured to receive email.
+
+verifyEmail Function: Combines syntax and domain checks to determine if the email is valid.
+
+Running the Code
+Save the code to a file, for example, email_verifier.go.
+
+Compile and run:
+go build -o email_verifier email_verifier.go
+./email_verifier
+
+Testing with Multiple Emails
+You can add or remove emails from the email list in code to test different cases.
+
+Possible Improvements
+Full Validation with SMTP: For deeper checks, such as verifying that an email address actually exists, you could use the SMTP protocol to try to establish a connection to the email server. However, this is more complex and may be blocked by some email servers.
+Error Handling: Improve error and message handling to cover more specific cases.
+Command Line Interface: Add a CLI interface to pass emails as arguments or read from a file.
